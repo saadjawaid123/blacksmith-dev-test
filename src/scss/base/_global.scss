@@ -1,0 +1,40 @@
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-open-sans;
+	overflow-x: hidden;
+	color: $color-mediumgray;
+	line-height: 1.4;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	background: none;
+	border: none;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	outline: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+.main-content {
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+}

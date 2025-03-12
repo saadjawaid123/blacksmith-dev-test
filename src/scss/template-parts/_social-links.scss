@@ -1,0 +1,14 @@
+.social-links {
+	&__item {
+		margin-right: rem-calc(16);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__image {
+		width: rem-calc(39);
+		height: rem-calc(39);
+	}
+}

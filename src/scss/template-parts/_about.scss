@@ -1,0 +1,352 @@
+.about {
+	@extend %site-wrapper;
+
+	position: relative;
+	padding: rem-calc(40) rem-calc(14) rem-calc(80);
+	color: $color-mediumgray;
+
+	@include media('>phone') {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+	}
+
+	@include media('>phone-small') {
+		padding: rem-calc(35) rem-calc(60) rem-calc(80);
+	}
+
+	@include media('>tablet') {
+		padding: rem-calc(45) rem-calc(100) rem-calc(100);
+	}
+
+	@include media('>desktop-small') {
+		padding: rem-calc(56) rem-calc(140) rem-calc(140);
+	}
+
+	@include media('>desktop-medium') {
+		padding: rem-calc(76) rem-calc(180) rem-calc(160);
+	}
+
+	@include media('>desktop-large') {
+		padding: rem-calc(96) rem-calc(260) rem-calc(180) rem-calc(268);
+	}
+
+	.about-decoration {
+		@extend %text-decoration--left;
+
+		@include media('<=phone') {
+			top: rem-calc(400);
+			left: 98%;
+		}
+
+		@include media('<=470px') {
+			left: 96.5%;
+		}
+
+		@include media('>phone') {
+			top: rem-calc(8);
+		}
+
+		@include media('>tablet') {
+			top: rem-calc(10);
+		}
+
+		@include media('>desktop-medium') {
+			top: rem-calc(12);
+		}
+
+		&__label {
+			@extend %text-decoration__label--light;
+
+			&-inner {
+				@extend %text-decoration__label-inner--light;
+			}
+		}
+
+		&__number {
+			@extend %text-decoration__number--light;
+		}
+	}
+
+	.about-content {
+		@extend %mobile-max-wrapper;
+
+		position: relative;
+		z-index: 2;
+
+		@include media('>phone') {
+			width: 35%;
+		}
+
+		@include media('>tablet') {
+			width: 30%;
+		}
+
+		@include media('>desktop-small') {
+			width: 26%;
+		}
+
+		&__picture {
+			@extend %site-picture;
+			@include ratio(293, 338);
+
+			width: 100%;
+			max-height: rem-calc(350);
+			margin-bottom: rem-calc(40);
+
+			@include media('>phone') {
+				max-height: none;
+			}
+
+			@include media('>tablet') {
+				margin-bottom: rem-calc(60);
+			}
+
+			@include media('>desktop-small') {
+				margin-bottom: rem-calc(80);
+			}
+		}
+
+		&__image {
+			@extend %image__cover;
+		}
+
+		.about-header {
+			margin-bottom: rem-calc(28);
+
+			&__subtitle {
+				@extend %header__subtitle--dark;
+
+				@include media('>desktop-small') {
+					margin-bottom: rem-calc(18);
+				}
+
+				@include media('>desktop-medium') {
+					margin-bottom: rem-calc(22);
+				}
+
+				@include media('>desktop-large') {
+					margin-bottom: rem-calc(26);
+				}
+			}
+
+			&__title {
+				@extend %header__title--dark;
+
+				@include media('>tablet') {
+					margin-bottom: rem-calc(20);
+				}
+
+				@include media('>desktop-small') {
+					margin-bottom: rem-calc(28);
+				}
+
+				@include media('>desktop-medium') {
+					margin-bottom: rem-calc(34);
+				}
+
+				@include media('>desktop-large') {
+					margin-bottom: rem-calc(42);
+				}
+			}
+		}
+
+		&__featured {
+			@extend %content__featured--dark;
+			margin-bottom: rem-calc(10);
+
+			@include media('>phone') {
+				margin-bottom: rem-calc(14);
+			}
+
+			@include media('>tablet') {
+				margin-bottom: rem-calc(18);
+			}
+
+			@include media('>desktop-small') {
+				margin-bottom: rem-calc(22);
+			}
+
+			@include media('>desktop-medium') {
+				margin-bottom: rem-calc(26);
+			}
+		}
+
+		&__text {
+			margin-bottom: rem-calc(26);
+
+			@include media('>phone') {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.about-cards {
+		@extend %mobile-max-wrapper;
+
+		@include media('>phone') {
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width: 56%;
+			padding-top: rem-calc(20);
+		}
+
+		@include media('>desktop-small') {
+			padding-top: rem-calc(40);
+		}
+
+		@include media('>desktop-medium') {
+			padding-top: rem-calc(40);
+		}
+
+		.card-item {
+			@include media('>phone') {
+				width: 45%;
+			}
+
+			@include media('>desktop-small') {
+				width: 47%;
+				margin-bottom: rem-calc(52);
+			}
+
+			@include media('>desktop-medium') {
+				margin-bottom: rem-calc(66);
+			}
+
+			@include media('>desktop-large') {
+				margin-bottom: rem-calc(84);
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.card-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-left: 5px;
+	padding-right: rem-calc(35);
+	margin-bottom: rem-calc(44);
+
+	@include media('>phone') {
+		align-content: flex-start;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&-decoration {
+		@extend %text-decoration__large--right;
+
+		top: rem-calc(84);
+		right: rem-calc(34);
+		z-index: 1;
+
+		@include media('>phone') {
+			top: 77%;
+			right: 100%;
+		}
+
+		@include media('>desktop-small') {
+			top: 87%;
+		}
+
+		&__text {
+			@extend %text-decoration__large-label--light;
+
+			font-size: rem-calc(42);
+
+			@include media('>tablet') {
+				font-size: rem-calc(46);
+			}
+
+			@include media('>desktop-small') {
+				font-size: rem-calc(48);
+			}
+
+			@include media('>desktop-medium') {
+				font-size: rem-calc(52);
+				letter-spacing: 4.7px;
+			}
+
+			@include media('>desktop-large') {
+				font-size: rem-calc(56);
+			}
+		}
+	}
+
+	&__icon {
+		position: relative;
+		z-index: 2;
+		order: 2;
+		width: rem-calc(46);
+		height: rem-calc(46);
+
+		@include media('>phone') {
+			order: 1;
+			margin-bottom: rem-calc(12);
+		}
+
+		@include media('>desktop-small') {
+			width: rem-calc(56);
+			height: rem-calc(56);
+			margin-bottom: rem-calc(18);
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 2;
+		font-size: rem-calc(19);
+		font-family: $font-druk-wide;
+		letter-spacing: 0.53px;
+		color: $color-lightgray;
+		order: 1;
+
+		@include media('>phone') {
+			order: 2;
+		}
+
+		@include media('>desktop-small') {
+			font-size: rem-calc(22);
+			margin-bottom: rem-calc(18);
+		}
+
+		@include media('>desktop-large') {
+			font-size: rem-calc(28);
+		}
+
+		@include media('>desktop-large') {
+			font-size: rem-calc(32);
+			margin-bottom: rem-calc(24);
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		order: 3;
+		font-size: rem-calc(12);
+		margin-top: 5px;
+
+		@include media('>tablet') {
+			font-size: rem-calc(14);
+			letter-spacing: 0.53px;
+		}
+	}
+}

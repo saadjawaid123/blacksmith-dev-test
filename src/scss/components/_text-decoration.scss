@@ -1,0 +1,249 @@
+%text-decoration {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	display: inline-flex;
+	flex-direction: column;
+	font-family: $font-druk-wide;
+	text-transform: uppercase;
+	pointer-events: none;
+	transform: rotate(90deg);
+
+	&--left {
+		@extend %text-decoration;
+
+		transform-origin: left;
+		left: 7px;
+
+		@include media('>phone') {
+			left: rem-calc(21);
+		}
+
+		@include media('>tablet') {
+			left: rem-calc(22);
+		}
+
+		@include media('>desktop-small') {
+			left: rem-calc(25);
+		}
+
+		@include media('>desktop-medium') {
+			left: rem-calc(27);
+		}
+
+		@include media('>desktop-large') {
+			left: rem-calc(29);
+		}
+	}
+
+	&--right {
+		@extend %text-decoration;
+
+		transform-origin: right;
+		right: rem-calc(12);
+
+		@include media('>phone') {
+			flex-direction: column-reverse;
+			right: rem-calc(27);
+		}
+
+		@include media('>tablet') {
+			right: rem-calc(31);
+		}
+
+		@include media('>desktop-small') {
+			right: rem-calc(35);
+		}
+
+		@include media('>desktop-medium') {
+			right: rem-calc(37);
+		}
+	}
+}
+
+%text-decoration__label {
+	display: none;
+
+	@include media('>phone') {
+		width: 100%;
+		display: inline-block;
+		font-size: rem-calc(9);
+		line-height: 1;
+		letter-spacing: 0.52px;
+		margin-bottom: 5px;
+	}
+
+	@include media('>tablet') {
+		font-size: rem-calc(10);
+		margin-bottom: 6px;
+	}
+
+	@include media('>desktop-small') {
+		font-size: rem-calc(11);
+		margin-bottom: 7px;
+	}
+
+	&--dark {
+		@extend %text-decoration__label;
+
+		color: $color-mediumgray;
+		background-color: $color-slate;
+	}
+
+	&--light {
+		@extend %text-decoration__label;
+
+		color: $color-lightestgray;
+		background-color: $color-lightestgray;
+	}
+}
+
+%text-decoration__label-inner {
+	padding-right: 4px;
+
+	&--dark {
+		@extend %text-decoration__label-inner;
+
+		background-color: $color-licorice;
+	}
+
+	&--light{
+		@extend %text-decoration__label-inner;
+
+		background-color: $color-white;
+	}
+}
+
+
+
+
+%text-decoration__number {
+	display: inline-block;
+	width: 100%;
+	font-size: rem-calc(34);
+	line-height: 1;
+	letter-spacing: 2.82px;
+
+	@include media('>phone-small') {
+		font-size: rem-calc(36);
+	}
+
+	@include media('>phone') {
+		font-size: rem-calc(38);
+		margin-top: 5px;
+		margin-bottom: 8px;
+	}
+
+	@include media('>tablet') {
+		font-size: rem-calc(42);
+		margin-top: 6px;
+		margin-bottom: 9px;
+	}
+
+	@include media('>desktop-small') {
+		font-size: rem-calc(46);
+		margin-top: 7px;
+		margin-bottom: 10px;
+	}
+
+	@include media('>desktop-medium') {
+		font-size: rem-calc(52);
+	}
+
+	@include media('>desktop-large') {
+		font-size: rem-calc(56);
+	}
+
+	&--dark {
+		@extend %text-decoration__number;
+
+		color: $color-slate;
+	}
+
+	&--light {
+		@extend %text-decoration__number;
+
+		color: $color-lightestgray;
+	}
+}
+
+%text-decoration__large {
+	@extend %text-decoration;
+	letter-spacing: 0.81px;
+
+	&--left {
+		@extend %text-decoration__large;
+
+		transform-origin: left;
+		left: rem-calc(0);
+	}
+
+	&--right {
+		@extend %text-decoration__large;
+
+		transform-origin: right;
+		right: rem-calc(22);
+	}
+}
+
+%text-decoration__large-label {
+	font-size: rem-calc(95);
+
+	@include media('>phone') {
+		font-size: rem-calc(82);
+	}
+
+	@include media('>tablet') {
+		font-size: rem-calc(94);
+	}
+
+	@include media('>desktop-small') {
+		font-size: rem-calc(108);
+	}
+
+	@include media('>desktop-medium') {
+		font-size: rem-calc(120);
+	}
+
+	@include media('>desktop-large') {
+		font-size: rem-calc(126);
+	}
+
+	@include media('>desktop-xlarge') {
+		font-size: rem-calc(142);
+	}
+
+	&--dark {
+		@extend %text-decoration__large-label;
+
+		color: $color-slate;
+	}
+
+	&--light {
+		@extend %text-decoration__large-label;
+
+		color: $color-lightestgray;
+	}
+}
+
+%dots-pattern {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 1;
+	background-image: url(../images/general/dots.svg);
+	background-size: rem-calc(100);
+	background-position: center;
+
+	@include media('>phone') {
+		background-size: rem-calc(125);
+	}
+
+	@include media('>desktop-small') {
+		background-size: rem-calc(150);
+	}
+
+	@include media('>desktop-medium') {
+		background-size: rem-calc(175);
+	}
+}

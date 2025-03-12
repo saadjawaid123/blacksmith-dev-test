@@ -1,0 +1,84 @@
+%site-picture {
+	position: relative;
+	display: block;
+}
+
+%image__cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+	&--contain {
+		@extend %image__cover;
+
+		object-fit: contain;
+	}
+}
+
+%image__blend-layer {
+	mix-blend-mode: color;
+}
+
+%image__color-burn {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	width: 21.5%;
+	height: 100%;
+	background-color: rgba($color-orange, 0.9);
+	mix-blend-mode: color;
+
+	&--left {
+		@extend %image__color-burn;
+
+		left: 0;
+	}
+
+	&--right {
+		@extend %image__color-burn;
+
+		right: 0;
+	}
+}
+
+%background-image__gray-overlay {
+	@extend %site-picture;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 70%;
+	opacity: 0.8;
+
+	@include media('>phone') {
+		height: 90%;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom,  rgba(37,37,37,0.5) 0%,rgba(37,37,37,0.9) 60%,rgba(37,37,37,1) 85%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66252525', endColorstr='#252525',GradientType=0 );
+	}
+
+	&--image-element {
+		@extend %image__cover;
+
+		z-index: 2;
+		object-position: center;
+		opacity: 0.3;
+		filter: grayscale(100%);
+	}
+}

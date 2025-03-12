@@ -1,0 +1,223 @@
+%link-list__item {
+	padding-left: 0 !important;
+	margin-bottom: 0 !important;
+	background-color: $color-lightestgray;
+
+	&:nth-child(even) {
+		background-color: #fbfbfb;
+	}
+
+	&::before {
+		display: none !important;
+	}
+}
+
+%link-list__link {
+	position: relative;
+	display: flex;
+	align-content: stretch;
+	align-items: stretch;
+	justify-content: space-between;
+	padding: rem-calc(17) rem-calc(16) rem-calc(17) rem-calc(10);
+
+	@include media('>phone') {
+		align-items: center;
+		align-content: center;
+	}
+
+	@include media('>desktop-small') {
+		padding: rem-calc(18) rem-calc(19) rem-calc(18) rem-calc(20);
+	}
+
+	@include media('>desktop-medium') {
+		padding: rem-calc(20) rem-calc(22) rem-calc(20) rem-calc(30);
+	}
+
+	@include media('>desktop-large') {
+		padding: rem-calc(25) rem-calc(26) rem-calc(25) rem-calc(40);
+	}
+
+	&--download-btn {
+		@extend %link-list__link;
+
+		&::before,
+		&::after {
+			content: '';
+			display: inline-block;
+			width: rem-calc(36);
+			height: rem-calc(40);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			transition: 0.35s ease opacity;
+
+			@include media('>desktop-small') {
+				width: rem-calc(44);
+				height: rem-calc(50);
+			}
+		}
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			right: rem-calc(16);
+			z-index: 2;
+			transform: translateY(-50%);
+			background-image: url('/wp-content/themes/rae-energy/images/shared/download-icon-white.svg');
+			background-color: $color-pumpkin;
+			opacity: 0;
+
+			@include media('>desktop-small') {
+				right: rem-calc(19);
+			}
+
+			@include media('>desktop-medium') {
+				right: rem-calc(22);
+			}
+
+			@include media('>desktop-large') {
+				right: rem-calc(27);
+			}
+		}
+
+		&::after {
+			position: relative;
+			z-index: 1;
+			background-image: url('/wp-content/themes/rae-energy/images/shared/download-icon.svg');
+			align-self: center;
+		}
+
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+
+			&::after {
+				opacity: 0;
+			}
+		}
+	}
+
+	&--arrow-btn {
+		@extend %link-list__link;
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			content: '';
+			display: block;
+		}
+
+		&::before {
+			right: rem-calc(12);
+			width: rem-calc(34);
+			height: rem-calc(40);
+			border: 1px solid $color-orange;
+			transition: 0.35s ease background-color;
+
+			@include media('>desktop-small') {
+				right: rem-calc(27);
+				width: rem-calc(44);
+				height: rem-calc(50);
+			}
+		}
+
+		&::after {
+			right: rem-calc(27);
+			width: 5px;
+			height: 5px;
+			border-right: 1px solid $color-orange;
+			border-bottom: 1px solid $color-orange;
+			transition: 0.35s ease border-color;
+			transform: translateY(-50%) rotate(-45deg);
+
+			@include media('>desktop-small') {
+				right: rem-calc(46);
+				width: 6px;
+				height: 6px;
+			}
+		}
+
+		&:hover {
+			&::before {
+				background-color: $color-orange;
+			}
+
+			&::after {
+				border-color: $color-white;
+			}
+		}
+	}
+}
+
+%link-list__title-label {
+	display: block;
+	font-size: rem-calc(10);
+	font-family: $font-forza;
+	font-weight: 700;
+	color: $color-pumpkin;
+	letter-spacing: 0.13px;
+	margin-bottom: auto;
+	text-transform: uppercase;
+}
+
+
+%link-list__title {
+	position: relative;
+	display: inline-flex;
+	align-items: flex-start;
+	align-content: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	font-family: $font-forza;
+	font-weight: 700;
+	line-height: 1;
+	padding-right: 7px;
+
+	&::before {
+		@extend %link-list__title-label;
+
+		@include media('>phone') {
+			display: none;
+		}
+	}
+
+	&--main {
+		@extend %link-list__title;
+
+		font-size: rem-calc(13);
+		letter-spacing: 0.16px;
+		color: $color-licorice;
+		text-transform: uppercase;
+
+		@include media('>tablet') {
+			font-size: rem-calc(14);
+		}
+
+		@include media('>desktop-small') {
+			font-size: rem-calc(15);
+		}
+
+		@include media('>desktop-medium') {
+			font-size: rem-calc(16);
+			letter-spacing: 0.2px;
+		}
+	}
+
+	&--secondary {
+		@extend %link-list__title;
+
+		font-size: rem-calc(14);
+		letter-spacing: 0.17px;
+		color: $color-mediumgray;
+		padding-right: 7px;
+		text-align: center;
+
+		@include media('>phone') {
+			align-items: center;
+			padding-right: 0;
+		}
+	}
+}
