@@ -54,4 +54,20 @@
 
     // Add Event Listener to Window to Check if Navigation Has Scrolled
     window.addEventListener('scroll', handleScroll)
+
+
+	// Smooth Scrolling for Internal Links (e.g., #culture)
+	document.addEventListener("DOMContentLoaded", scrollToCulture);
+
+	function scrollToCulture(){
+		document.querySelectorAll('a[href^="#culture"]').forEach(anchor => {
+			anchor.addEventListener("click", function (e) {
+				e.preventDefault();
+				document.querySelector(this.getAttribute("href")).scrollIntoView({
+					behavior: "smooth"
+				});
+			});
+		});
+	}
+
 })();

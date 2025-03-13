@@ -16,7 +16,7 @@
 				<span class="openings-header__subtitle">Current Openings</span>
 				<h2 class="openings-header__title">Open Roles</h2>
 			</header>
-			<strong class="openings-content__featured">Lorem ipsum dolor sit amet, consectetur adipisp quis nostrud exercitation. /strong>
+			<strong class="openings-content__featured">Lorem ipsum dolor sit amet, consectetur adipisp quis nostrud exercitation. </strong>
 			<p class="openings-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa.</p>
 			<a href="#" class="openings-content__button">View All Open Roles</a>
 		</div>

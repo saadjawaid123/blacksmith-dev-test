@@ -299,9 +299,22 @@
 
 
 	&__list {
+
+		display: flex;
+		flex-direction: column;
+
+		@include media('>tablet') {
+			flex-direction: row;
+		}
+
+		@include media('>desktop-small') {
+			flex-direction: row;
+		}
+
 		&-item {
 			@extend %arrow-block-button;
 
+			flex: 1;
 			margin-bottom: rem-calc(14);
 
 			@include media('>phone') {

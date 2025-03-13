@@ -829,6 +829,10 @@
 	&__indicator {
 		font-size: rem-calc(14);
 		letter-spacing: 0.17px;
+		color: $color-orange;
+		@include media('>phone-small') {
+			display: none;
+		}
 	}
 
 	&__label {
@@ -837,6 +841,7 @@
 		font-size: rem-calc(20);
 		letter-spacing: 1.89px;
 		text-transform: uppercase;
+		margin-left: rem-calc(15);
 
 		@include media('>phone-small') {
 			font-size: 7px;
@@ -845,6 +850,7 @@
 
 		@include media('>desktop-small') {
 			font-size: 8px;
+			margin-left: unset;
 		}
 
 		@include media('>desktop-medium') {

@@ -1,2 +1,450 @@
 .culture {
+  @extend %content__area--dark;
+
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+    @extend %site-wrapper;
+    position: relative;
+    padding: rem-calc(96) rem-calc(16) rem-calc(80) rem-calc(0);
+
+    @include media('>phone-small') {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      padding: rem-calc(90) rem-calc(80) rem-calc(80) rem-calc(60);
+      //padding: rem-calc(35) rem-calc(60) rem-calc(80);
+    }
+
+    @include media('>phone') {
+      padding: rem-calc(160) rem-calc(100) rem-calc(160);
+    }
+
+    @include media('>tablet') {
+      padding: rem-calc(160) rem-calc(100) rem-calc(160);
+    }
+
+    @include media('>desktop-small') {
+      padding: rem-calc(144) rem-calc(148) rem-calc(226);
+    }
+
+    @include media('>desktop-medium') {
+      padding: rem-calc(240) rem-calc(196) rem-calc(340);
+    }
+
+    @include media('>desktop-large') {
+      padding: rem-calc(240) rem-calc(260) rem-calc(290);
+    }
+  }
+
+  &-decoration {
+    @extend %text-decoration--right;
+
+    z-index: 4;
+
+    @include media('<=phone') {
+      top: 15%;
+      right: 99%;
+    }
+
+    @include media('<=600px') {
+      right: 3.5%;
+    }
+
+    @include media('>phone') {
+      top: 35%;
+    }
+
+    @include media('>tablet') {
+      right: 98%;
+    }
+
+    @include media('>desktop-small') {
+      right: 98%;
+    }
+
+
+    &__label {
+      @extend %text-decoration__label--dark;
+
+      &-inner {
+        @extend %text-decoration__label-inner--dark;
+      }
+    }
+
+    &__number {
+      @extend %text-decoration__number--dark;
+
+      @include media('<=phone') {
+        color: $color-licorice;
+      }
+
+      @include media('<=tablet') {
+        color: $color-mine_shaft;
+      }
+
+      @include media('<=desktop-small') {
+        color: $color-mine_shaft;
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+    z-index: 3;
+
+    @include media('>phone-small') {
+      width: 42.5%;
+      margin-bottom: 0;
+    }
+
+    @include media('>phone') {
+      width: 42.5%;
+      margin-bottom: 0;
+    }
+
+    @include media('>tablet') {
+      width: 42.5%;
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 16%;
+      left: 8%;
+      z-index: 1;
+      width: 70%;
+      height: 83.5%;
+      background-color: $color-orange;
+
+      @include media('>phone-small') {
+        top: 1%;
+        left: 60%;
+        width: 96%;
+        height: 133.5%;
+      }
+      @include media('>desktop-small') {
+        top: 27%;
+        left: 60%;
+        width: 96%;
+        height: 133.5%;
+      }
+      @include media('>desktop-medium') {
+        top: 15%;
+        left: 60%;
+        width: 96%;
+        height: 133.5%;
+      }
+      @include media('>desktop-large') {
+        top: 7%;
+        left: 60%;
+        width: 96%;
+        height: 133.5%;
+      }
+      @include media('>desktop-xlarge') {
+        top: 1%;
+        left: 60%;
+        width: 96%;
+        height: 133.5%;
+      }
+    }
+
+    &-main {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      top: rem-calc(72);
+      right: -15%;
+
+      @include media('>tablet') {
+        top: rem-calc(200);
+        right: unset;
+      }
+
+      @include media('>desktop-small') {
+        top: rem-calc(200);
+      }
+
+      @include media('>desktop-medium') {
+        top: rem-calc(200);
+      }
+
+      @include media('>desktop-large') {
+        top: rem-calc(200);
+      }
+
+      &::after {
+        @extend %dots-pattern;
+
+        z-index: 1;
+      }
+
+      //&::before {
+      //  top: 6%;
+      //  left: -7%;
+      //  width: 26%;
+      //  height: 27%;
+      //
+      //  @include media('>phone-small') {
+      //    top: 21.5%;
+      //    left: -11%;
+      //    width: 26%;
+      //    height: 35.5%;
+      //  }
+      //  @include media('>desktop-small') {
+      //    left: -13%;
+      //  }
+      //}
+
+      &::after {
+
+        top: 45%;
+        left: -4%;
+        width: 99%;
+        height: 45.5%;
+
+        @include media('>desktop-small') {
+          top: 63.5%;
+          left: 10%;
+          width: 99%;
+          height: 45.5%;
+        }
+        @include media('>desktop-medium') {
+          left: 9.5%;
+          height: 47.5%;
+        }
+        @include media('>desktop-large') {
+          left: 7%;
+          height: 47.5%;
+        }
+        @include media('>desktop-xlarge') {
+          left: 6.5%;
+          height: 46.5%;
+        }
+      }
+    }
+  }
+
+  &__picture {
+    @extend %site-picture;
+
+    &-main {
+      @include ratio(635, 425);
+
+      position: relative;
+      z-index: 2;
+
+      &::before {
+        @extend %image__color-burn--left;
+        z-index: 3;
+        max-width: 18%;
+        display: none;
+        @include media('>desktop-small') {
+          display: block;
+        }
+      }
+    }
+
+    &-top,
+    &-side {
+      @include ratio(179, 179);
+      position: absolute;
+      margin: auto;
+      width: 100%;
+      z-index: 3;
+    }
+
+    &-top {
+      max-width: 35%;
+      left: 0%;
+      top: -5%;
+      max-height: rem-calc(210px);
+
+      @include media('>desktop-small') {
+        max-width: 60%;
+        left: 24%;
+        top: -40%;
+      }
+
+      &::before {
+        @extend %dots-pattern;
+
+        display: none;
+
+        @include media('>phone-small') {
+          display: block;
+          top: -13%;
+          right: -13%;
+          z-index: 1;
+          width: 63%;
+          height: 110%;
+        }
+        @include media('>desktop-medium') {
+          top: -13%;
+          right: -13%;
+        }
+        @include media('>desktop-large') {
+          top: -13%;
+          right: -8%;
+        }
+        @include media('>desktop-xlarge') {
+          top: -13%;
+          right: -10%;
+        }
+
+      }
+    }
+
+    &-side {
+      max-width: 31%;
+      top: 60%;
+      right: -5%;
+      height: rem-calc(255);
+      display: none;
+
+      @include media('>desktop-small') {
+        right: -149%;
+        top: -41%;
+        max-width: 41%;
+        display: block;
+      }
+      @include media('>desktop-medium') {
+        max-width: 37%;
+        right: -149%;
+        top: -45%;
+      }
+      @include media('>desktop-large') {
+        max-width: 31%;
+        right: -134%;
+        top: -38%;
+      }
+      @include media('>desktop-xlarge') {
+        max-width: 31%;
+        right: -134%;
+        top: -38%;
+      }
+
+      &::after {
+        max-width: 80%;
+        left: -10%;
+        position: absolute;
+        height: 100%;
+        top: 10%;
+        @extend %dots-pattern;
+        z-index: 1;
+
+        @include media('>desktop-small') {
+          left: -10%;
+          top: 10%;
+        }
+        @include media('>desktop-medium') {
+          left: -19%;
+          top: 10%;
+        }
+        @include media('>desktop-large') {
+          left: -19%;
+          top: 10%;
+        }
+        @include media('>desktop-xlarge') {
+          left: -13%;
+          top: 10%;
+        }
+      }
+    }
+  }
+
+  &__image {
+    @extend %image__cover;
+
+    z-index: 2;
+  }
+
+  &-header {
+    margin-bottom: rem-calc(18);
+    max-width: 65%;
+
+    @include media('>tablet') {
+      margin-bottom: rem-calc(20);
+      max-width: unset;
+    }
+
+    @include media('>desktop-small') {
+      margin-bottom: rem-calc(22);
+    }
+
+    @include media('>desktop-medium') {
+      margin-bottom: rem-calc(24);
+    }
+
+    @include media('>desktop-large') {
+      margin-bottom: rem-calc(26);
+    }
+
+    &__subtitle {
+      @extend %header__subtitle--light;
+
+      margin-bottom: rem-calc(20);
+
+      @include media('>tablet') {
+        margin-bottom: rem-calc(24);
+      }
+
+      @include media('>desktop-small') {
+        margin-bottom: rem-calc(12);
+      }
+    }
+
+    &__title {
+      @extend %header__title--light;
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+    padding: rem-calc(160) rem-calc(64) rem-calc(112);
+    background-color: $color-mine_shaft;
+
+    @include media('>phone-small') {
+      width: 90%;
+    }
+
+    @include media('>phone') {
+      width: 45%;
+      padding: rem-calc(64) rem-calc(64) rem-calc(48);
+    }
+
+    @include media('>tablet') {
+      width: 45%;
+      padding: rem-calc(64) rem-calc(64) rem-calc(48);
+    }
+
+    @include media('>desktop-small') {
+      width: 50%;
+      padding: rem-calc(84) rem-calc(88);
+      z-index: 3;
+    }
+
+    @include media('>desktop-medium') {
+      width: 50%;
+      padding: rem-calc(84) rem-calc(88);
+    }
+
+    @include media('>desktop-large') {
+      width: 45%;
+      padding: rem-calc(120) rem-calc(124);
+    }
+
+    @include media('>desktop-xlarge') {
+      width: 45%;
+      padding: rem-calc(140) rem-calc(144);
+    }
+    &__text {
+      width: 100%;
+    }
+  }
 }

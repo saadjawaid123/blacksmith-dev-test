@@ -44,6 +44,11 @@
 
 		right: 0;
 	}
+
+	@include media('>desktop-small') {
+		width: 32.5%;
+	}
+
 }
 
 %background-image__gray-overlay {

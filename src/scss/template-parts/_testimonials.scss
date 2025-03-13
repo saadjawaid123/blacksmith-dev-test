@@ -239,6 +239,8 @@
 		margin-bottom: rem-calc(31);
 
 		&__item {
+			@extend %content__area--white;
+
 			position: relative;
 			margin: rem-calc(15) 7px;
 			text-align: center;

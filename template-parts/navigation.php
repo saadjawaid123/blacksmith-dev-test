@@ -69,7 +69,7 @@
                 			</a>
                 		</li>
                 		<li class="navigation-menu__item">
-                			<a href="#" class="navigation-menu__link">
+                			<a href="#culture" class="navigation-menu__link">
                 				<span class="navigation-menu__indicator">03</span>
                 				<span class="navigation-menu__label">Company</span>
                 			</a>

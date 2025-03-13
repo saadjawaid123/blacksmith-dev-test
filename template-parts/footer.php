@@ -65,7 +65,7 @@
         				<a href="#" class="footer-navigation__link">Experience</a>
         			</li>
         			<li class="footer-navigation__list-item">
-        				<a href="#" class="footer-navigation__link">Company</a>
+        				<a href="#company" class="footer-navigation__link">Company</a>
         			</li>
         			<li class="footer-navigation__list-item">
         				<a href="#" class="footer-navigation__link">Careers</a>
